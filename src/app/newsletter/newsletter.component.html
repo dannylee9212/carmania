@@ -1,0 +1,19 @@
+<div class="row newsl-subs">
+    <div class="mx-auto justify-content-center">
+        <h3>Subscribe to our newsletter</h3>
+        <div class="form-group" >
+            <form [formGroup]="newsletterForm" (submit)="submitForm()">
+                <input type=""
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                    formControlName="email"
+                >
+                <button type="submit" class="btn btn-outline-light mt-3">Subscribe</button>
+            </form>
+        </div>
+        <div class="disclaimer">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat mollitia reiciendis exercitationem nemo autem illo velit alias eaque, aspernatur distinctio sint amet labore debitis fugiat repellat. Libero incidunt repudiandae ullam?</p>
+        </div>
+    </div>
+</div>

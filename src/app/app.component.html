@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    position="end"
+    fixedInViewport="true"
+    mode="push"
+    [opened]="opened"
+    (openedChange) ="updateNav($event)"
+    autosize
+  >
+    hello
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header></app-header>
+      <router-outlet></router-outlet> 
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
