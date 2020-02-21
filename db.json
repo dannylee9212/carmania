@@ -219,6 +219,24 @@
       "email": "francis@gmail.com",
       "subject": "Please give me work",
       "message": "ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+    },
+    {
+      "email": "jaelee9212@gmail.com",
+      "subject": "Advertise",
+      "message": "dsad",
+      "id": 2
+    },
+    {
+      "email": "jaelee9212@gmail.com",
+      "subject": "got a proposal",
+      "message": "sadasd",
+      "id": 3
+    },
+    {
+      "email": "jaelee9212@gmail.com",
+      "subject": "got a proposal",
+      "message": "51",
+      "id": 4
     }
   ],
   "newsletter": [

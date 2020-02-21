@@ -1,1 +1,38 @@
-<p>contact works!</p>
+<div class="container container-small contact-container mt-5">
+    <h1>Contact us here</h1>
+    <form [formGroup]="contactForm" (submit)="submitForm()">
+        <div class="form-group mb-3">
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter your email">
+            <p class="error-label" *ngIf="!contactForm.get('email').valid && !contactForm.get('email').touched">
+                <span *ngIf="contactForm.controls['email'].errors.required">this input is required</span>
+                <span *ngIf="contactForm.controls['email'].errors.email">email is wrong</span>
+            </p>
+        </div>
+        <div class="form-group mb-3">
+            <label> Tell us why are you contacting us</label>
+            <select class="form-control" id="subject" formControlName="subject">
+                <!-- value vs [value] ? -->
+                <option *ngFor="let subject of subjectsForm" [value] ="subject">{{ subject }}</option>
+            </select>
+            <p class="error-label" *ngIf="!contactForm.get('subject').valid && !contactForm.get('subject').touched">
+                this input is required
+            </p>
+        </div>
+        <div class="form-group mb-3">
+            <label>Write us a message</label>
+            <textarea formControlName="message" id="message" class="form-control" rows="3"></textarea>
+            <p class="error-label" *ngIf="!contactForm.get('message').valid && !contactForm.get('message').touched">
+                You need to input something here!
+            </p>
+        </div>
+        <button
+            type="submit"
+            class="btn btn-outline-primary"
+        >
+            submit
+        </button>
+        <!-- by dismissable, you can remove the error message -->
+        <alert type="danger" *ngIf="onError.show" dismissable="true" (onClosed) ="resetError()">{{onError.message}}</alert>
+        <alert type="success" *ngIf="onSuccess" dismissOnTimeout="1500" (onClosed) ="onSuccess = false">Thank you</alert>
+    </form>
+</div>
