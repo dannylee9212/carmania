@@ -23,6 +23,7 @@ import { TruncatePipe } from './lib/pipes/truncate.pipe';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 // form 
 import { ReactiveFormsModule } from '@angular/forms';
+import { AlertModule } from 'ngx-bootstrap/alert';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     MatSidenavModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

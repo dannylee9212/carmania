@@ -12,6 +12,13 @@ export class NewsletterComponent implements OnInit {
   newsletterForm = this.fb.group({
     email: [null, [Validators.email, Validators.required]]
   })
+  disabledButton = false;
+  formError = {
+    show: false,
+    message:''
+  }
+  formSuccess:boolean = false;
+
   constructor(
     private fb: FormBuilder,
     private newsletterService: NewsLetterService
@@ -20,17 +27,41 @@ export class NewsletterComponent implements OnInit {
   ngOnInit() {
   }
   submitForm() {
+    this.disabledButton = true;
     if(this.newsletterForm.valid) {
       this.newsletterService.subscribeUser(this.newsletterForm.value.email).subscribe(data=> {
-        console.log(data)
+        this.formSuccess = true;
+        this.newsletterForm.reset();
+        this.enableButton();
       },
       error => {
-        console.log(error)
+        this.handleError('show', error)
+        this.enableButton();
       })
     } else {
       // handle errors
-      console.log()
+      this.handleError('show', "You need a valid email")
+      this.enableButton();
     }
   }
 
+  handleError(type:string, message: string) {
+    if(type === 'reset') {
+      this.formError = {
+        show: false,
+        message
+      }
+    } else {
+      this.formError = {
+        show: true,
+        message
+      }
+
+    }
+  }
+  enableButton() {
+    setTimeout(() => {
+      this.disabledButton = false
+    }, 2000)
+  }
 }
