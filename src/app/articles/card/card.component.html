@@ -1,6 +1,6 @@
 <a [routerLink]="['article', 'article.id']">
     <div class="card mb-4 box-shadow">
-        <div *ngIf="hasImage" class="article-card-image"    [ngStyle]="{'background-image': 'url(assets/images/' + article.image +')'}"> 
+        <div *ngIf="hasImage" class="article-card-image" [ngStyle]="{'background-image': 'url(assets/images/' + article.image +')'}"> 
         </div>
         <div class="card-body">
             <small>{{ article.created | date:"fullDate"}}</small>

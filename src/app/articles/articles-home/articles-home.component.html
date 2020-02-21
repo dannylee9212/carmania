@@ -1,1 +1,30 @@
-<app-article></app-article>
+<div class="container">
+    <div
+      infiniteScroll
+      [infiniteScrollDistance]="1"
+      [infiniteScrollThrottle]="1000"
+      (scrolled)="onScroll()"
+    >
+        <div class="row">
+            <div class="mx-auto mt-5 mb-3 monoton">
+                <h3>
+                    Latest news
+                </h3>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let article of articles"> 
+                <app-card [article]="article" [hasImage]="true" [truncNumber]="200"></app-card>
+            </div>
+        </div>
+    </div>
+    <app-spinner [show]="showSpinner"></app-spinner>
+    <div class="row">
+        <div class="mx-auto mt-5 mb-3 monoton articles-end" *ngIf="articleEnd">
+            <h3>
+                Sorry. no more articles
+            </h3>
+        </div>
+    </div>
+</div>

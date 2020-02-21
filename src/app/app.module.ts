@@ -30,6 +30,10 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 // cookie
 import { CookieService } from 'ngx-cookie-service';
 import { FavsComponent } from './articles/favs/favs.component';
+// infinite scrool
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SpinnerComponent } from './lib/spinner/spinner.component';
+import { SemipolarSpinnerModule } from 'angular-epic-spinners'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +49,8 @@ import { FavsComponent } from './articles/favs/favs.component';
     CardComponent,
     TruncatePipe,
     NewsletterComponent,
-    FavsComponent
+    FavsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +60,8 @@ import { FavsComponent } from './articles/favs/favs.component';
     ReactiveFormsModule,
     MatIconModule,
     MatSidenavModule,
+    InfiniteScrollModule,
+    SemipolarSpinnerModule,
     CarouselModule.forRoot(),
     AlertModule.forRoot()
   ],

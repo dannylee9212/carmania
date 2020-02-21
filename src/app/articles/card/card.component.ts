@@ -8,12 +8,13 @@ import { Articles } from 'src/app/lib/requests.service';
 })
 export class CardComponent implements OnInit {
   @Input() article: Articles;
-  @Input() hasImage = true;
-  @Input() truncNumber = 100;
+  @Input() hasImage: boolean;
+  @Input() truncNumber: number;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.article.image)
   }
 
 }
