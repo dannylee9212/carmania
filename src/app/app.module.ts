@@ -15,15 +15,21 @@ import { SlidenavComponent } from './header/slidenav/slidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // ngx boots
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 // MAT
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CardComponent } from './articles/card/card.component';
 import { TruncatePipe } from './lib/pipes/truncate.pipe';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { MatIconModule } from '@angular/material/icon';
 // form 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertModule } from 'ngx-bootstrap/alert';
+
+// cookie
+import { CookieService } from 'ngx-cookie-service';
+import { FavsComponent } from './articles/favs/favs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +44,8 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     CarouselComponent,
     CardComponent,
     TruncatePipe,
-    NewsletterComponent
+    NewsletterComponent,
+    FavsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +53,12 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatIconModule,
     MatSidenavModule,
     CarouselModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
